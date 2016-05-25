@@ -120,7 +120,7 @@ class TravelWatchView extends Ui.WatchFace {
         dc.drawText(20, 127, smallFontAlpha, kcalString, Gfx.TEXT_JUSTIFY_LEFT);        
 
         // BPM
-        dc.drawBitmap(139, 134, heart);
+        dc.drawBitmap(139, 133, heart);
 
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
         dc.drawText(165, 127, smallFont, bpmString, Gfx.TEXT_JUSTIFY_LEFT);
