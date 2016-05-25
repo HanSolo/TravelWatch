@@ -1,0 +1,61 @@
+<strings>
+
+    <string id="AppName">TravelWatch</string>
+    
+    <string id="HomeTimezoneOffsetTitle">Home Timezone Offset</string>
+
+	<string id="UTC_M_1200Title">UTC-12:00</string>
+	<string id="UTC_M_1100Title">UTC-11:00</string>
+	<string id="UTC_M_1000Title">UTC-10:00</string>
+	<string id="UTC_M_0930Title">UTC-09:30</string>
+	<string id="UTC_M_0900Title">UTC-09:00</string>
+	<string id="UTC_M_0800Title">UTC-08:00</string>
+	<string id="UTC_M_0700Title">UTC-07:00</string>
+	<string id="UTC_M_0600Title">UTC-06:00</string>
+	<string id="UTC_M_0500Title">UTC-05:00</string>
+	<string id="UTC_M_0400Title">UTC-04:00</string>
+	<string id="UTC_M_0330Title">UTC-03:30</string>
+	<string id="UTC_M_0300Title">UTC-03:00</string>
+	<string id="UTC_M_0200Title">UTC-02:00</string>
+	<string id="UTC_M_0100Title">UTC-01:00</string>
+	<string id="UTC_M_0000Title">UTC-00:00</string>
+	<string id="UTC_P_0000Title">UTC+00:00</string>
+	<string id="UTC_P_0100Title">UTC+01:00</string>
+	<string id="UTC_P_0200Title">UTC+02:00</string>
+	<string id="UTC_P_0300Title">UTC+03:00</string>
+	<string id="UTC_P_0330Title">UTC+03:30</string>
+	<string id="UTC_P_0400Title">UTC+04:00</string>
+	<string id="UTC_P_0430Title">UTC+04:30</string>
+	<string id="UTC_P_0500Title">UTC+05:00</string>
+	<string id="UTC_P_0530Title">UTC+05:30</string>
+	<string id="UTC_P_0545Title">UTC+05:45</string>
+	<string id="UTC_P_0600Title">UTC+06:00</string>
+	<string id="UTC_P_0630Title">UTC+06:30</string>
+	<string id="UTC_P_0700Title">UTC+07:00</string>
+	<string id="UTC_P_0800Title">UTC+08:00</string>
+	<string id="UTC_P_0830Title">UTC+08:30</string>
+	<string id="UTC_P_0845Title">UTC+08:45</string>
+	<string id="UTC_P_0900Title">UTC+09:00</string>
+	<string id="UTC_P_0930Title">UTC+09:30</string>
+	<string id="UTC_P_1000Title">UTC+10:00</string>
+	<string id="UTC_P_1030Title">UTC+10:30</string>
+	<string id="UTC_P_1100Title">UTC+11:00</string>
+	<string id="UTC_P_1200Title">UTC+12:00</string>
+	<string id="UTC_P_1245Title">UTC+12:45</string>
+	<string id="UTC_P_1300Title">UTC+13:00</string>
+	<string id="UTC_P_1400Title">UTC+14:00</string>
+	
+
+	
+    <string id="CurrentMinuteColorTitle">Current Minute Color</string>
+    <string id="HomeMinuteColorTitle">Home Minute Color</string>    
+
+    <string id="ColorWhite">White</string>
+    <string id="ColorRed">Red</string>
+    <string id="ColorGreen">Green</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorOrange">Orange</string>    
+    <string id="ColorPurple">Purple</string>
+    <string id="ColorMagenta">Magenta</string>
+    
+</strings>

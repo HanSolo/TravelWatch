@@ -1,0 +1,20 @@
+<resources>
+    <string id="AppName">TravelWatch</string>
+
+    <bitmap id="LauncherIcon" filename="drawables/launcher_icon.png" />
+    <bitmap id="batteryIcon" x="80" y="0" filename="drawables/battery.png" />
+    <bitmap id="stepsIcon" x="72" y="157" filename="drawables/steps.png" />
+    <bitmap id="heartIcon" x="139" y="131" filename="drawables/heart.png" />
+
+    <fonts>
+        <font id="roboto18Light" filename="fonts/Roboto_Light_18.fnt" filter="0123456789."/>
+        <font id="roboto18LightAlpha" filename="fonts/Roboto_Light_18.fnt" filter="0123456789.-%kcal "/>
+        <font id="roboto44Light" filename="fonts/Roboto_Light_44.fnt"  filter="0123456789."/>
+        <font id="roboto72Light" filename="fonts/Roboto_Light_72.fnt"  filter="0123456789."/>
+        <font id="roboto18Regular" filename="fonts/Roboto_Regular_18.fnt"  filter="0123456789."/>
+        <font id="roboto44Regular" filename="fonts/Roboto_Regular_44.fnt"  filter="0123456789."/>
+        <font id="roboto72Regular" filename="fonts/Roboto_Regular_72.fnt"  filter="0123456789."/>
+        <font id="roboto44Medium" filename="fonts/Roboto_Medium_44.fnt"  filter="0123456789."/>
+        <font id="roboto72Medium" filename="fonts/Roboto_Medium_72.fnt"  filter="0123456789."/>
+    </fonts>
+</resources>

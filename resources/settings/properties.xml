@@ -1,0 +1,15 @@
+<properties>
+
+    <property id="HomeTimezoneOffset" type="number">7200</property>
+    <property id="CurrentMinuteColor" type="number">0x00AAFF</property>
+    <property id="HomeMinuteColor" type="number">0xFFAA00</property>    
+
+	<property id="colorWhite"   type="number">0xFFFFFF</property>
+	<property id="colorRed"     type="number">0xFF0000</property>
+	<property id="colorGreen"   type="number">0x00FF00</property>
+	<property id="colorBlue"    type="number">0x00AAFF</property>
+	<property id="colorOrange"  type="number">0xFFAA00</property>	
+	<property id="colorPurple"  type="number">0xAA00FF</property>
+	<property id="colorMagenta" type="number">0xFF00FF</property>
+	
+</properties>

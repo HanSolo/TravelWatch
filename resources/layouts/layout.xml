@@ -1,0 +1,14 @@
+<layout id="WatchFace">
+    <label id="dateLabel" x="center" y="0" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+
+    <drawable id="stepsIcon" />
+    <label id="stepsLabel" x="89" y="155" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+
+    <label id="hourLabel" x="20" y="center" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_WHITE" />
+    <label id="minuteLabel" x="112" y="center" justification="Gfx.TEXT_JUSTIFY_CENTER" color="Gfx.COLOR_BLUE" />
+
+    <label id="kcalLabel" x="20" y="127" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" />
+
+    <drawable id="heartIcon" />
+    <label id="bpmLabel" x="159" y="127" justification="Gfx.TEXT_JUSTIFY_RIGHT" color="Gfx.COLOR_WHITE" />
+</layout>
