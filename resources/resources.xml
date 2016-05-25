@@ -7,14 +7,17 @@
     <bitmap id="heartIcon" x="139" y="131" filename="drawables/heart.png" />
 
     <fonts>
-        <font id="roboto18Light" filename="fonts/Roboto_Light_18.fnt" filter="0123456789."/>
-        <font id="roboto18LightAlpha" filename="fonts/Roboto_Light_18.fnt" filter="0123456789.-%kcal "/>
-        <font id="roboto44Light" filename="fonts/Roboto_Light_44.fnt"  filter="0123456789."/>
-        <font id="roboto72Light" filename="fonts/Roboto_Light_72.fnt"  filter="0123456789."/>
-        <font id="roboto18Regular" filename="fonts/Roboto_Regular_18.fnt"  filter="0123456789."/>
-        <font id="roboto44Regular" filename="fonts/Roboto_Regular_44.fnt"  filter="0123456789."/>
-        <font id="roboto72Regular" filename="fonts/Roboto_Regular_72.fnt"  filter="0123456789."/>
-        <font id="roboto44Medium" filename="fonts/Roboto_Medium_44.fnt"  filter="0123456789."/>
-        <font id="roboto72Medium" filename="fonts/Roboto_Medium_72.fnt"  filter="0123456789."/>
+        <font id="roboto18Light"       filename="fonts/Roboto_Light_18.fnt"   filter="0123456789."/>
+        <font id="roboto18LightAlpha"  filename="fonts/Roboto_Light_18.fnt"   filter="0123456789.-%kcal "/>
+        <font id="roboto44Light"       filename="fonts/Roboto_Light_44.fnt"   filter="0123456789."/>
+        <font id="roboto72Light"       filename="fonts/Roboto_Light_72.fnt"   filter="0123456789."/>
+        <font id="roboto18Regular"     filename="fonts/Roboto_Regular_18.fnt" filter="0123456789."/>
+        <font id="roboto18RegularAlpha" filename="fonts/Roboto_Regular_18.fnt"  filter="0123456789.-%kcal "/>
+        <font id="roboto44Regular"     filename="fonts/Roboto_Regular_44.fnt" filter="0123456789."/>
+        <font id="roboto72Regular"     filename="fonts/Roboto_Regular_72.fnt" filter="0123456789."/>                
+        <font id="roboto44Medium"      filename="fonts/Roboto_Medium_44.fnt"  filter="0123456789."/>
+        <font id="roboto72Medium"      filename="fonts/Roboto_Medium_72.fnt"  filter="0123456789."/>
+        <font id="roboto44Bold"        filename="fonts/Roboto_Bold_44.fnt"    filter="0123456789."/>
+        <font id="roboto72Bold"        filename="fonts/Roboto_Bold_72.fnt"    filter="0123456789."/>
     </fonts>
 </resources>

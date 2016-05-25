@@ -67,5 +67,8 @@
             <listEntry value="0xFF00FF">@Strings.ColorMagenta</listEntry>
         </settingConfig>
     </setting>
-
+    
+    <setting propertyKey="@Properties.UseBoldFonts" title="@Strings.UseBoldFontsTitle">
+    	<settingConfig type="boolean" />    	
+	</setting>
 </settings>

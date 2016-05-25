@@ -4,6 +4,8 @@
     <property id="CurrentMinuteColor" type="number">0x00AAFF</property>
     <property id="HomeMinuteColor" type="number">0xFFAA00</property>    
 
+	<property id="UseBoldFonts" type="boolean">false</property>
+
 	<property id="colorWhite"   type="number">0xFFFFFF</property>
 	<property id="colorRed"     type="number">0xFF0000</property>
 	<property id="colorGreen"   type="number">0x00FF00</property>

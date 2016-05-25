@@ -15,9 +15,9 @@ class TravelWatchView extends Ui.WatchFace {
 
     const CET_TIMEZONE_OFFSET = 7200;
     
-    var font18LightAlpha, font18Light, font18Regular;
-    var font44Light, font44Regular, font44Medium;
-    var font72Light, font72Regular, font72Medium;
+    var font18LightAlpha, font18Light, font18RegularAlpha, font18Regular;
+    var font44Light, font44Regular, font44Medium, font44Bold;
+    var font72Light, font72Regular, font72Medium, font72Bold;
     var battery, steps, heart;
     var heartRate;
 
@@ -29,19 +29,22 @@ class TravelWatchView extends Ui.WatchFace {
 
     //! Load your resources here
     function onLayout(dc) {
-        font18LightAlpha = Ui.loadResource(Rez.Fonts.roboto18LightAlpha);
-        font18Light      = Ui.loadResource(Rez.Fonts.roboto18Light);
-        font18Regular    = Ui.loadResource(Rez.Fonts.roboto18Regular);
-        font44Light      = Ui.loadResource(Rez.Fonts.roboto44Light);
-        font44Regular    = Ui.loadResource(Rez.Fonts.roboto44Regular);
-        font44Medium     = Ui.loadResource(Rez.Fonts.roboto44Medium);
-        font72Light      = Ui.loadResource(Rez.Fonts.roboto72Light);
-        font72Regular    = Ui.loadResource(Rez.Fonts.roboto72Regular);
-        font72Medium     = Ui.loadResource(Rez.Fonts.roboto72Medium);
+        font18LightAlpha   = Ui.loadResource(Rez.Fonts.roboto18LightAlpha);
+        font18Light        = Ui.loadResource(Rez.Fonts.roboto18Light);
+        font18Regular      = Ui.loadResource(Rez.Fonts.roboto18Regular);        
+        font18RegularAlpha = Ui.loadResource(Rez.Fonts.roboto18RegularAlpha);
+        font44Light        = Ui.loadResource(Rez.Fonts.roboto44Light);
+        font44Regular      = Ui.loadResource(Rez.Fonts.roboto44Regular);
+        font44Medium       = Ui.loadResource(Rez.Fonts.roboto44Medium);
+        font44Bold         = Ui.loadResource(Rez.Fonts.roboto44Bold);
+        font72Light        = Ui.loadResource(Rez.Fonts.roboto72Light);
+        font72Regular      = Ui.loadResource(Rez.Fonts.roboto72Regular);
+        font72Medium       = Ui.loadResource(Rez.Fonts.roboto72Medium);
+        font72Bold         = Ui.loadResource(Rez.Fonts.roboto72Bold);
 
-        battery          = Ui.loadResource(Rez.Drawables.batteryIcon);
-        steps            = Ui.loadResource(Rez.Drawables.stepsIcon);
-        heart            = Ui.loadResource(Rez.Drawables.heartIcon);
+        battery            = Ui.loadResource(Rez.Drawables.batteryIcon);
+        steps              = Ui.loadResource(Rez.Drawables.stepsIcon);
+        heart              = Ui.loadResource(Rez.Drawables.heartIcon);
     }
 
     //! Called when this View is brought to the foreground. Restore
@@ -71,6 +74,11 @@ class TravelWatchView extends Ui.WatchFace {
         var dateString         = Lang.format(nowinfo.day.format("%02d")) + "." + Lang.format(nowinfo.month.format("%02d"));
         var bpmString          = (hr.heartRate != Act.INVALID_HR_SAMPLE && hr.heartRate > 0) ? hr.heartRate : "";
         var charge             = systemStats.battery;
+        var useBoldFonts       = App.getApp().getProperty("UseBoldFonts");
+        var bigHourFont        = useBoldFonts ? font72Bold : font72Medium;
+        var bigMinuteFont      = useBoldFonts ? font72Regular : font72Light;
+        var smallFont          = useBoldFonts ? font18Regular : font18Light;
+        var smallFontAlpha     = useBoldFonts ? font18RegularAlpha : font18LightAlpha;
 
 
         // Battery
@@ -81,9 +89,9 @@ class TravelWatchView extends Ui.WatchFace {
         // Date
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
         if (onTravel) {
-            dc.drawText(20, height * 0.11, font18Light, dateString, Gfx.TEXT_JUSTIFY_LEFT);
+            dc.drawText(20, height * 0.11, smallfont, dateString, Gfx.TEXT_JUSTIFY_LEFT);
         } else {
-            dc.drawText(width * 0.5, height * 0.11, font18Light, dateString, Gfx.TEXT_JUSTIFY_CENTER);
+            dc.drawText(width * 0.5, height * 0.11, smallFont, dateString, Gfx.TEXT_JUSTIFY_CENTER);
         }
 
         // Home Time
@@ -95,33 +103,33 @@ class TravelWatchView extends Ui.WatchFace {
             var homeMinute     = ((homeSeconds - (homeHour.abs() * 3600)) / 60) % 60;
                         
             dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-            dc.drawText(150, height * 0.11, font18Light, Lang.format(homeHour.abs().format("%02d")), Gfx.TEXT_JUSTIFY_CENTER);
+            dc.drawText(150, height * 0.11, smallFont, Lang.format(homeHour.abs().format("%02d")), Gfx.TEXT_JUSTIFY_CENTER);
             dc.setColor(App.getApp().getProperty("HomeMinuteColor"), Gfx.COLOR_TRANSPARENT);
-            dc.drawText(176, height * 0.11, font18Light, Lang.format(homeMinute.abs().format("%02d")), Gfx.TEXT_JUSTIFY_CENTER);
+            dc.drawText(176, height * 0.11, smallFont, Lang.format(homeMinute.abs().format("%02d")), Gfx.TEXT_JUSTIFY_CENTER);
         }
         
         // Current Time
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(65, height * 0.2, font72Medium, hourString, Gfx.TEXT_JUSTIFY_CENTER);
+        dc.drawText(65, height * 0.2, bigHourFont, hourString, Gfx.TEXT_JUSTIFY_CENTER);
 
         dc.setColor(App.getApp().getProperty("CurrentMinuteColor"), Gfx.COLOR_TRANSPARENT);
-        dc.drawText(157, height * 0.2, font72Light, minuteString, Gfx.TEXT_JUSTIFY_CENTER);
+        dc.drawText(157, height * 0.2, bigMinuteFont, minuteString, Gfx.TEXT_JUSTIFY_CENTER);
 
         // KCal
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(20, 127, font18LightAlpha, kcalString, Gfx.TEXT_JUSTIFY_LEFT);        
+        dc.drawText(20, 127, smallFontAlpha, kcalString, Gfx.TEXT_JUSTIFY_LEFT);        
 
         // BPM
         dc.drawBitmap(139, 134, heart);
 
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(165, 127, font18Light, bpmString, Gfx.TEXT_JUSTIFY_LEFT);
+        dc.drawText(165, 127, smallFont, bpmString, Gfx.TEXT_JUSTIFY_LEFT);
         
         // Steps
         dc.drawBitmap(69, 161, steps);
 
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-        dc.drawText(93, 156, font18Light, stepsString, Gfx.TEXT_JUSTIFY_LEFT);
+        dc.drawText(93, 156, smallFont, stepsString, Gfx.TEXT_JUSTIFY_LEFT);
     }
 
     //! Called when this View is removed from the screen. Save the

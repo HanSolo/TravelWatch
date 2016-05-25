@@ -48,7 +48,9 @@
 
 	
     <string id="CurrentMinuteColorTitle">Current Minute Color</string>
-    <string id="HomeMinuteColorTitle">Home Minute Color</string>    
+    <string id="HomeMinuteColorTitle">Home Minute Color</string>   
+    
+    <string id="UseBoldFontsTitle">Bold fonts</string>
 
     <string id="ColorWhite">White</string>
     <string id="ColorRed">Red</string>
