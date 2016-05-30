@@ -78,8 +78,7 @@ class TravelWatchView extends Ui.WatchFace {
         var bigHourFont        = useBoldFonts ? font72Bold : font72Medium;
         var bigMinuteFont      = useBoldFonts ? font72Regular : font72Light;
         var smallFont          = useBoldFonts ? font18Regular : font18Light;
-        var smallFontAlpha     = useBoldFonts ? font18RegularAlpha : font18LightAlpha;
-
+        var smallFontAlpha     = useBoldFonts ? font18RegularAlpha : font18LightAlpha;      
 
         // Battery
         dc.drawBitmap(96, 3, battery);
@@ -145,5 +144,10 @@ class TravelWatchView extends Ui.WatchFace {
     //! Terminate any active timers and prepare for slow updates.
     function onEnterSleep() {
     }
-
+    
+    //! React on changings in settings
+    function onSettingsChange() {
+        App.AppBase.onSettingsChange();
+        
+    }
 }
