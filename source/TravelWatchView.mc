@@ -11,10 +11,7 @@ using Toybox.Time.Gregorian as Greg;
 using Toybox.Application as App;
 
 
-class TravelWatchView extends Ui.WatchFace {
-
-    const CET_TIMEZONE_OFFSET = 7200;
-    
+class TravelWatchView extends Ui.WatchFace {    
     var font18LightAlpha, font18Light, font18RegularAlpha, font18Regular;
     var font44Light, font44Regular, font44Medium, font44Bold;
     var font72Light, font72Regular, font72Medium, font72Bold;
@@ -67,19 +64,20 @@ class TravelWatchView extends Ui.WatchFace {
         var hr                 = hrIter.next();
         var hourString         = Lang.format(clockTime.hour.format("%02d"));
         var minuteString       = Lang.format(clockTime.min.format("%02d"));
-        var homeTimezoneOffset = App.getApp().getProperty("HomeTimezoneOffset");
+        var homeTimezoneOffset = Application.getApp().getProperty("HomeTimezoneOffset");
         var onTravel           = homeTimezoneOffset != clockTime.timeZoneOffset;        
         var stepsString        = actinfo.steps.toString();
         var kcalString         = actinfo.calories.toString() + " kcal";        
         var dateString         = Lang.format(nowinfo.day.format("%02d")) + "." + Lang.format(nowinfo.month.format("%02d"));
         var bpmString          = (hr.heartRate != Act.INVALID_HR_SAMPLE && hr.heartRate > 0) ? hr.heartRate : "";
         var charge             = systemStats.battery;
-        var useBoldFonts       = App.getApp().getProperty("UseBoldFonts");
+        var useBoldFonts       = Application.getApp().getProperty("UseBoldFonts");
         var bigHourFont        = useBoldFonts ? font72Bold : font72Medium;
         var bigMinuteFont      = useBoldFonts ? font72Regular : font72Light;
         var smallFont          = useBoldFonts ? font18Regular : font18Light;
         var smallFontAlpha     = useBoldFonts ? font18RegularAlpha : font18LightAlpha;      
 
+        
         // Battery
         dc.drawBitmap(96, 3, battery);
         dc.setColor(charge < 20 ? Gfx.COLOR_RED : Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
@@ -88,7 +86,7 @@ class TravelWatchView extends Ui.WatchFace {
         // Date
         dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
         if (onTravel) {
-            dc.drawText(20, height * 0.11, smallfont, dateString, Gfx.TEXT_JUSTIFY_LEFT);
+            dc.drawText(20, height * 0.11, smallFont, dateString, Gfx.TEXT_JUSTIFY_LEFT);
         } else {
             dc.drawText(width * 0.5, height * 0.11, smallFont, dateString, Gfx.TEXT_JUSTIFY_CENTER);
         }
@@ -148,6 +146,7 @@ class TravelWatchView extends Ui.WatchFace {
     //! React on changings in settings
     function onSettingsChange() {
         App.AppBase.onSettingsChange();
-        
+        homeTimezoneOffset = Application.getApp().getProperty("HomeTimezoneOffset");
+        onTravel           = homeTimezoneOffset != clockTime.timeZoneOffset;
     }
 }
